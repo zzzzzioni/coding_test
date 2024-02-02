@@ -1,27 +1,29 @@
-# 미해결 
-
-S = []
 T = True
 
 while T:
-    s = input()
-    if s != '.':
-        S.append(s)
-    else:
-        T = False 
-    
-for i in range(len(S)):
-
-    s = list(S[i])
-    
-    if s.count('(') == s.count(')') and s.count('[') == s.count(']'):
-        pass
-        if s.count('(') == 0:
+    st = input()
+    if st != '.':
+        st = list(st)
+        l = []
+        for s in st:
+            if s == '(' or s == '[':
+                l.append(s)
+            elif s == ')':
+                if len(l) >= 1 and l[-1]=='(':
+                    l.pop(-1)
+                else:
+                    l.append(s)
+            elif s == ']':
+                if len(l) >= 1 and l[-1]=='[':
+                  l.pop(-1)  
+                else:
+                    l.append(s)
+            else:
+                pass
+        if len(l) == 0:
             print('yes')
         else:
-            pass
+            print('no')
+            
     else:
-        print('no')
-
-    
-        
+        T = False 

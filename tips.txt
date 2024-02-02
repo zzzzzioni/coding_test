@@ -1,0 +1,22 @@
+# 시간 복잡도 계산하기
+
+import time 
+
+start_time = time.time()
+end_time = time.time()
+
+print(end_time - start_time)
+
+# 큐 자료구조 이용법
+
+from collections import deque
+
+deq = deque()
+deque.append(item)
+deque.appendleft(item)
+deque.pop()
+deque.popleft()
+deque.extend(array)
+deque.extendleft(array)
+deque.remove(item)
+deque.rotate(num)
