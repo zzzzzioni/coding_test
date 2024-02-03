@@ -1,5 +1,3 @@
-# 미해결 
-
 from collections import deque
 
 def DFS(graph, v, visited):
@@ -18,8 +16,9 @@ def BFS(graph, v, visited):
         print(i, end=' ')
         for j in graph[i]:
             if not visited[j]:
+                visited[j] = True 
                 deq.append(j)
-                BFS(graph, j, visited)
+
         
 I = list(map(int, input().split()))
 
@@ -43,5 +42,5 @@ visited_dfs = [False for _ in range(I[0] + 1)]
 visited_bfs = [False for _ in range(I[0] + 1)]
 
 DFS(graph, I[2], visited_dfs)
-print('\n')
+print('')
 BFS(graph, I[2], visited_bfs)
